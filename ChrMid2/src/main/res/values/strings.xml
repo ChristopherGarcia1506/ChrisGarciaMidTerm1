@@ -1,0 +1,12 @@
+<!--Chris Garcia N01371506 -->
+<resources>
+    <string name="app_name">ChrisMidterm01371506</string>
+    <string name="chris">Chris</string>
+    <string name="garcia">Garcia</string>
+    <string name="n01371506">n01371506</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="chris_garcia">Chris Garcia</string>
+
+
+</resources>
