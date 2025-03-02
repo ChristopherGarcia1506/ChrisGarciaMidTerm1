@@ -7,6 +7,11 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
+import android.widget.Button;
+
+import java.util.Arrays;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -59,6 +64,48 @@ public class n01371506Fragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_n01371506, container, false);
+        View view = inflater.inflate(R.layout.fragment_n01371506, container, false);
+
+
+        //--- Auto complete logic ---
+        String[] cities =   getResources().getStringArray(R.array.cities); // assigning array
+        AutoCompleteTextView autoCompleteTextView = view.findViewById(R.id.autoCompleteTextView); // assigning textview
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getContext(), android.R.layout.select_dialog_item,cities);//displaying items
+        autoCompleteTextView.setAdapter(adapter);//setting adapter
+
+        //--- Button logic ---
+
+        Button button2 = view.findViewById(R.id.button2);
+        button2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                String UserInput = autoCompleteTextView.getText().toString();
+                boolean validCityCheck = false;
+                if(UserInput.length()<1){
+                    autoCompleteTextView.setError("Can not be Empty:");
+                }
+                for(String i : cities){
+                    if(i.equals(UserInput)){
+                        validCityCheck = true;
+
+                     //   int indexarray = U
+                     //   Fragment garciafragment = new GarFragment();
+                     //   Bundle bundle = new Bundle();
+                     //   bundle.putInt("key",);
+
+                        break;
+                    }
+                }
+                if(validCityCheck != true){
+                    autoCompleteTextView.setError(UserInput+" is not a valid capital");
+                }
+            }
+        });
+
+
+
+
+        return view;
     }
 }
