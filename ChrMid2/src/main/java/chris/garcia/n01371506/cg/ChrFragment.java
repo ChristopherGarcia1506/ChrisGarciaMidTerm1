@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.text.SimpleDateFormat;
@@ -66,9 +67,8 @@ public class ChrFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_chris, container, false);
 
-
-        TextView dateTextView;
-        dateTextView = view.findViewById(R.id.CHRdateTextView);
+        // --- Setting Date ---
+        TextView dateTextView = view.findViewById(R.id.CHRdateTextView);
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-mm-dd", Locale.getDefault());
         String currentDate = dateFormat.format(new Date());
         dateTextView.setText(currentDate);
