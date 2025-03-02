@@ -8,5 +8,30 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="chris_garcia">Chris Garcia</string>
 
+    <string-array name="countries" >
+        <item>Canada</item>
+        <item>Peru</item>
+        <item>France</item>
+        <item>Russia</item>
+        <item>Argentina</item>
+        <item>Brazil</item>
+        <item>Germany</item>
+        <item>China</item>
+        <item>Colombia</item>
+        <item>Ecuador</item>
+    </string-array>
+
+    <string-array name="cities">
+        <item>Toronto</item>
+        <item>Lima</item>
+        <item>Paris</item>
+        <item>Moscow</item>
+        <item>Buenos Aires</item>
+        <item>Santos</item>
+        <item>Berlin</item>
+        <item>Beijing</item>
+        <item>Medellin</item>
+        <item>Cuenca</item>
+    </string-array>
 
 </resources>
