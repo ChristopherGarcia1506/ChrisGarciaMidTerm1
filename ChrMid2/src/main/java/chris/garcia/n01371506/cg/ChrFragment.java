@@ -7,6 +7,11 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -59,6 +64,15 @@ public class ChrFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_chris, container, false);
+        View view = inflater.inflate(R.layout.fragment_chris, container, false);
+
+
+        TextView dateTextView;
+        dateTextView = view.findViewById(R.id.CHRdateTextView);
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-mm-dd", Locale.getDefault());
+        String currentDate = dateFormat.format(new Date());
+        dateTextView.setText(currentDate);
+
+        return view;
     }
 }

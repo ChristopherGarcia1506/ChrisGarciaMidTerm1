@@ -14,9 +14,38 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:text="@string/chris_garcia"
-        android:textColor=""
+        android:textColor="@color/DarkBlue"
+        android:textSize="20sp"
+        android:textStyle="bold|italic"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextClock
+        android:id="@+id/CHRtextClock"
+        android:layout_width="219dp"
+        android:layout_height="123dp"
+        android:layout_marginStart="128dp"
+        android:layout_marginTop="84dp"
+        android:format24Hour="hh:mm:ss"
+        android:textColor="@color/lightgreen"
+        android:textSize="45sp"
+        android:textStyle="bold|italic"
+        android:timeZone="GMT"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/CHRdateTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="92dp"
+        android:layout_marginTop="144dp"
+        android:textColor="@color/lightgreen"
+        android:textSize="45sp"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

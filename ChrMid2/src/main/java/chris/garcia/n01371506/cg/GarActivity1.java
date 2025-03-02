@@ -45,12 +45,24 @@ public class GarActivity1 extends AppCompatActivity {
 
         viewPager.setAdapter(new ViewPagerAdapter(this, fragmentList));
 
-        String[] tabnames = {"Chris","Garcia","n01371506"};//setting tab names
+        String[] tabnames = {"Chris", "Garcia", "n01371506"};//setting tab names
         new TabLayoutMediator(tabLayout, viewPager,
                 (tab, position) -> {
-                    tab.setText(tabnames[position] );
+                    tab.setText(tabnames[position]);
                 }
         ).attach();
+
+
+        //----Soft BackKey Button---
+        OnBackPressedCallback callback = new OnBackPressedCallback(true) {      //action on back button pressed
+            @Override
+            public void handleOnBackPressed() {
+                if (isEnabled()) {
+                    alertPopUp();
+                }
+            }
+        };
+        getOnBackPressedDispatcher().addCallback(this, callback);
 
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
@@ -61,4 +73,20 @@ public class GarActivity1 extends AppCompatActivity {
     }
 
 
+    private void alertPopUp() {  // alert popup settings
+        new AlertDialog.Builder(this)
+                .setTitle("Chris Garcia")
+                .setMessage("Do you want to leave the app?")
+                .setPositiveButton("Yes", (dialog, which) -> {
+                    Intent intent = new Intent(Settings.ACTION_SETTINGS);
+                    startActivity(intent);
+                })
+                .setNegativeButton("No", (dialog, which) -> {
+                    viewPager.setCurrentItem(2, true);
+                })
+                .setCancelable(false)
+                .show();
+
+
+    }
 }
