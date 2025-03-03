@@ -110,13 +110,13 @@ public class GarActivity1 extends AppCompatActivity {
 
     private void alertPopUp() {  // alert popup settings
         new AlertDialog.Builder(this)
-                .setTitle("Chris Garcia")
-                .setMessage("Do you want to leave the app?")
-                .setPositiveButton("Yes", (dialog, which) -> {
+                .setTitle(R.string.chris_garcia)
+                .setMessage(R.string.do_you_want_to_leave_the_app)
+                .setPositiveButton(R.string.yes, (dialog, which) -> {
                     Intent intent = new Intent(Settings.ACTION_SETTINGS);
                     startActivity(intent);
                 })
-                .setNegativeButton("No", (dialog, which) -> {
+                .setNegativeButton(R.string.no, (dialog, which) -> {
                     viewPager.setCurrentItem(2, true);
                 })
                 .setCancelable(false)

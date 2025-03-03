@@ -87,7 +87,7 @@ public class n01371506Fragment extends Fragment {
 
                 //---if textview is empty
                 if(UserInput.length()<1){
-                    autoCompleteTextView.setError("Can not be Empty:");
+                    autoCompleteTextView.setError(getString(R.string.can_not_be_empty));
                 }
                 //--Checks if user input is in array
                 for(String i : cities){
@@ -104,7 +104,7 @@ public class n01371506Fragment extends Fragment {
                 }
                 //---if user input is not valid
                 if(validCityCheck != true){
-                    autoCompleteTextView.setError(UserInput+" is not a valid capital");
+                    autoCompleteTextView.setError(UserInput+getString(R.string.is_not_a_valid_capital));
                 }
 
 

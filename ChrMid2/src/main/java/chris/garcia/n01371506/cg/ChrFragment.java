@@ -69,7 +69,7 @@ public class ChrFragment extends Fragment {
 
         // --- Setting Date ---
         TextView dateTextView = view.findViewById(R.id.CHRdateTextView);
-        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-mm-dd", Locale.getDefault());
+        SimpleDateFormat dateFormat = new SimpleDateFormat(getString(R.string.yyyy_mm_dd), Locale.getDefault());
         String currentDate = dateFormat.format(new Date());
         dateTextView.setText(currentDate);
 

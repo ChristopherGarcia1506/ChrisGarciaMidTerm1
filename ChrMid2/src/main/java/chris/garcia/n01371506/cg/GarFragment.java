@@ -77,14 +77,14 @@ public class GarFragment extends Fragment {
             public void onClick(View v) {
 
               float rating = ratingBar.getRating();//assigning rating
-              DisplaySnackBar(view,"Rating: "+rating+" Stars");
+              DisplaySnackBar(view,getString(R.string.rating)+rating+getString(R.string.stars));
             }
         });
 
         //---Retrieving index ---
         Bundle bundle = getArguments();
         if(bundle != null){
-            int index = bundle.getInt("key");
+            int index = bundle.getInt(getString(R.string.key));
             textView.setText(index);
         }
 
