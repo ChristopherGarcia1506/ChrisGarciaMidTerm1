@@ -1,3 +1,4 @@
+//Chris Garcia n01371506
 package chris.garcia.n01371506.cg;
 
 import android.os.Bundle;
@@ -9,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -29,6 +31,8 @@ public class ChrFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+    private static int screenCounter = 0;
+
 
     public ChrFragment() {
         // Required empty public constructor
@@ -74,6 +78,16 @@ public class ChrFragment extends Fragment {
         dateTextView.setText(currentDate);
 
         return view;
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        screenCounter++; // Increment counter
+
+        // Show a toast with counter value and full name
+        Toast.makeText(getContext(), getString(R.string.screen_left) + screenCounter + getString(R.string.chris_garcia),
+                Toast.LENGTH_SHORT).show();
     }
 
 
