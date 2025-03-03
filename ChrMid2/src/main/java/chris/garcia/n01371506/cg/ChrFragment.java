@@ -75,4 +75,6 @@ public class ChrFragment extends Fragment {
 
         return view;
     }
+
+
 }

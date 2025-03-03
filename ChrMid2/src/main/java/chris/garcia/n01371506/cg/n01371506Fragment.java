@@ -3,6 +3,7 @@ package chris.garcia.n01371506.cg;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -82,24 +83,31 @@ public class n01371506Fragment extends Fragment {
 
                 String UserInput = autoCompleteTextView.getText().toString();
                 boolean validCityCheck = false;
+                int indexOfCity =-1;
+
+                //---if textview is empty
                 if(UserInput.length()<1){
                     autoCompleteTextView.setError("Can not be Empty:");
                 }
+                //--Checks if user input is in array
                 for(String i : cities){
+                    indexOfCity += 1;
                     if(i.equals(UserInput)){
                         validCityCheck = true;
 
-                     //   int indexarray = U
-                     //   Fragment garciafragment = new GarFragment();
-                     //   Bundle bundle = new Bundle();
-                     //   bundle.putInt("key",);
-
+                        Fragment Garfragment = new GarFragment();
+                        Bundle bundle = new Bundle();
+                        bundle.putInt("key",indexOfCity);
+                        Garfragment.setArguments(bundle);
                         break;
                     }
                 }
+                //---if user input is not valid
                 if(validCityCheck != true){
                     autoCompleteTextView.setError(UserInput+" is not a valid capital");
                 }
+
+
             }
         });
 
