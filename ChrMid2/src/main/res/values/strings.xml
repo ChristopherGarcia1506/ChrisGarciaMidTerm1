@@ -18,6 +18,11 @@
     <string name="is_not_a_valid_capital">" is not a valid capital"</string>
     <string name="can_not_be_empty">Can not be Empty:</string>
     <string name="screen_left">"Screen left "</string>
+    <string name="no_data_passed">NO DATA PASSED</string>
+    <string name="button">Button</string>
+    <string name="enter_capital_city">Enter Capital City.</string>
+    <string name="abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz">abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ</string>
+    <string name="submit">Submit</string>
 
 
     <string-array name="countries" >

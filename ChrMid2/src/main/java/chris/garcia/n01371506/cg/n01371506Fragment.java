@@ -71,13 +71,13 @@ public class n01371506Fragment extends Fragment {
 
         //--- Auto complete logic ---
         String[] cities =   getResources().getStringArray(R.array.cities); // assigning array
-        AutoCompleteTextView autoCompleteTextView = view.findViewById(R.id.autoCompleteTextView); // assigning textview
+        AutoCompleteTextView autoCompleteTextView = view.findViewById(R.id.ChrautoCompleteTextView); // assigning textview
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(getContext(), android.R.layout.select_dialog_item,cities);//displaying items
         autoCompleteTextView.setAdapter(adapter);//setting adapter
 
         //--- Button logic ---
 
-        Button button2 = view.findViewById(R.id.button2);
+        Button button2 = view.findViewById(R.id.Chrbutton2);
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -98,7 +98,7 @@ public class n01371506Fragment extends Fragment {
 
                         Fragment Garfragment = new GarFragment();
                         Bundle bundle = new Bundle();
-                        bundle.putInt("key",indexOfCity);
+                        bundle.putInt(getString(R.string.key),indexOfCity);
                         Garfragment.setArguments(bundle);
                         break;
                     }

@@ -9,7 +9,7 @@
     tools:context=".ChrFragment">
 
     <TextView
-        android:id="@+id/nameTextview"
+        android:id="@+id/ChrnameTextview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
@@ -50,7 +50,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/ChrimageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="92dp"

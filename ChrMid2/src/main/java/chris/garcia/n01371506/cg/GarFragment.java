@@ -67,11 +67,11 @@ public class GarFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_garcia, container, false);
 
-        TextView textView = view.findViewById(R.id.textView2);//assigning textview
+        TextView textView = view.findViewById(R.id.ChrtextView2);//assigning textview
 
         //--- Setting Button functionality
-        Button button = view.findViewById(R.id.button);
-        RatingBar ratingBar = view.findViewById(R.id.ratingBar);
+        Button button = view.findViewById(R.id.Chrbutton);
+        RatingBar ratingBar = view.findViewById(R.id.ChrratingBar);
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override

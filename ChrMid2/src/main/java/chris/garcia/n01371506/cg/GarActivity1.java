@@ -47,13 +47,13 @@ public class GarActivity1 extends AppCompatActivity {
         fragmentList.add(new GarFragment());
         fragmentList.add(new n01371506Fragment());
 
-        TabLayout tabLayout = findViewById(R.id.tabsLayout);
+        TabLayout tabLayout = findViewById(R.id.ChrtabsLayout);
         viewPager = findViewById(R.id.viewpager);
 
 
         viewPager.setAdapter(new ViewPagerAdapter(this, fragmentList));
 
-        String[] tabnames = {"Chris", "Garcia", "n01371506"};//setting tab names
+        String[] tabnames = {getString(R.string.chris),getString(R.string.garcia), getString(R.string.n01371506)};//setting tab names
         new TabLayoutMediator(tabLayout, viewPager,
                 (tab, position) -> {
                     tab.setText(tabnames[position]);

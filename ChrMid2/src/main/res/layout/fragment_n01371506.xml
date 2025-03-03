@@ -10,7 +10,7 @@
     <!-- TODO: Update blank fragment layout -->
 
     <ProgressBar
-        android:id="@+id/progressBar2"
+        android:id="@+id/ChrprogressBar2"
         style="?android:attr/progressBarStyle"
         android:layout_width="134dp"
         android:layout_height="141dp"
@@ -20,24 +20,24 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <AutoCompleteTextView
-        android:id="@+id/autoCompleteTextView"
+        android:id="@+id/ChrautoCompleteTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="128dp"
         android:layout_marginTop="200dp"
-        android:hint="Enter Capital City."
-        android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+        android:hint="@string/enter_capital_city"
+        android:digits="@string/abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz"
         android:completionThreshold="3"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/Chrbutton2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="160dp"
         android:layout_marginTop="316dp"
-        android:text="Submit"
+        android:text="@string/submit"
         android:textColor="@color/white"
         android:backgroundTint="@color/lightblue"
         app:layout_constraintStart_toStartOf="parent"
