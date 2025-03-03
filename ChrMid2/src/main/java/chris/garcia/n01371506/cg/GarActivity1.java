@@ -1,6 +1,7 @@
 //Chris Garcia n01371506
 package chris.garcia.n01371506.cg;
 
+import android.Manifest;
 import android.app.AlertDialog;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -15,6 +16,7 @@ import androidx.activity.EdgeToEdge;
 import androidx.activity.OnBackPressedCallback;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
@@ -31,6 +33,7 @@ public class GarActivity1 extends AppCompatActivity {
 
 
     ViewPager2 viewPager;
+    private static final String Permission = Manifest.permission.ACCESS_FINE_LOCATION;
     private static final int PermissionCode = 1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -78,7 +81,7 @@ public class GarActivity1 extends AppCompatActivity {
     }
 
 
-
+// --- Menu Creation ---
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu, menu);
@@ -87,9 +90,18 @@ public class GarActivity1 extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-
-
         return false;
+    }
+
+
+    //--- Checking  Permission---
+    private void RequestRuntimePerm() {
+        if (ActivityCompat.checkSelfPermission(this, Permission) == PackageManager.PERMISSION_GRANTED) {
+            Intent intent = new Intent(Intent.ACTION_VIEW);
+            startActivity(intent);
+        } else {//requests permission if it has not been granted yet.
+            ActivityCompat.requestPermissions(this, new String[]{Permission}, PermissionCode);
+        }
     }
 
     @Override
@@ -99,7 +111,6 @@ public class GarActivity1 extends AppCompatActivity {
         if (requestCode == PermissionCode) {
             if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                 Intent intent = new Intent(Intent.ACTION_VIEW);
-
                 startActivity(intent);
             } else {
                 Toast.makeText(this, R.string.PermDenied, Toast.LENGTH_SHORT).show();
